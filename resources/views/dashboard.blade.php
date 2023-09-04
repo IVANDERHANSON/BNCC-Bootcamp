@@ -32,10 +32,6 @@
                                         <x-primary-button style="margin: 10px 10px 10px 0px; background-color:orange;">
                                             <a href="{{ route('buy.product.now', $product->id) }}">BUY PRODUCT NOW</a>
                                         </x-primary-button>
-                                        <br>
-                                        <x-primary-button style="margin: 10px 10px 10px 0px; background-color:black;">
-                                            <a href="{{ route('report.product', $product->id) }}"><i data-feather="message-square"></i></a>
-                                        </x-primary-button>
                                     @else
                                         <p style="color: red;">{{ 'Out of stock, wait for admin to restock.' }}</p>
                                     @endif
@@ -54,6 +50,9 @@
                                             </x-primary-button>
                                         </form>
                                     @endif
+                                    <x-primary-button style="margin: 10px 10px 10px 0px; background-color:black;">
+                                        <a href="{{ route('report.product', $product->id) }}"><i data-feather="message-square"></i></a>
+                                    </x-primary-button>
                                 </div>
                             </div>
                         @endforeach
