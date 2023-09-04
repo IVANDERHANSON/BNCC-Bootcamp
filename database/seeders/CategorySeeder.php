@@ -15,5 +15,9 @@ class CategorySeeder extends Seeder
         \App\Models\Category::factory()->create([
             'name' => 'Book'
         ]);
+
+        \App\Models\Category::factory()->create([
+            'name' => 'Food'
+        ]);
     }
 }

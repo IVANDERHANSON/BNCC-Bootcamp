@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <p>{{ $product->name }}</p>
-                    <img src="{{asset('/storage'.'/'.$category.'/'.$product->photo)}}" alt="{{ $product->photo }}">
-                    <h2>Category: { $category }}</h2>
-                    <p>Price: {{ $product->price }}</p>
+                    <p style="font-weight: bold;">{{ $product->name }}</p>
+                    <img src="{{asset('/storage'.'/'.$category.'/'.$product->photo)}}" alt="{{ $product->photo }}" style="width: 200px; height: 200px;">
+                    <h2>Category: {{ $category }}</h2>
+                    <p>Price: Rp. {{ $product->price }}</p>
                     <p>Stock: {{ $product->stock }}</p>
                     <br>
                     <form action="/update-cart/{{ $cart->id }}" method="POST">

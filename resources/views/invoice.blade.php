@@ -16,16 +16,17 @@
                         @if ($invoice->userId != Auth::user()->id)
                             @continue
                         @endif
-                        <p>{{ $x++.'. '.$invoice->productName }}</p>
-                        <img src="{{asset('/storage'.'/'.$invoice->category.'/'.$invoice->productPhoto)}}" alt="{{ $invoice->productPhoto }}">
-                        <p>Category: {{ $invoice->category }}</p>
-                        <p>Price: Rp. {{ $invoice->productPrice }}</p>
-                        <p>Quantity: {{ $invoice->quantity }}</p>
-                        <p>Address: {{ $invoice->adress }}</p>
-                        <p>Postal Code: {{ $invoice->postalCode }}</p>
-                        <p>Total Price: Rp. {{ $invoice->totalPrice }}</p>
-                        <p></p>
-                        <br>
+                        <div style="margin: 20px 0px; border: solid; border-width: thin; padding-left: 20px;">
+                            <p style="font-weight: bold;">{{ $x++.'. '.$invoice->productName }}</p>
+                            <img src="{{asset('/storage'.'/'.$invoice->category.'/'.$invoice->productPhoto)}}" alt="{{ $invoice->productPhoto }}" style="width: 200px; height: 200px;">
+                            <p>Category: {{ $invoice->category }}</p>
+                            <p>Price: Rp. {{ $invoice->productPrice }}</p>
+                            <p>Quantity: {{ $invoice->quantity }}</p>
+                            <p>Address: {{ $invoice->address }}</p>
+                            <p>Postal Code: {{ $invoice->postalCode }}</p>
+                            <p>Total Price: Rp. {{ $invoice->totalPrice }}</p>
+                            <p></p>
+                        </div>
                     @endforeach
                     @if ($x == 1)
                         <p>{{ 'Your shopping invoice is empty.' }}</p>

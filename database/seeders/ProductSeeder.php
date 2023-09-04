@@ -35,5 +35,29 @@ class ProductSeeder extends Seeder
             'stock' => '200',
             'photo' => 'Book3.jpg'
         ]);
+
+        \App\Models\Product::factory()->create([
+            'categoryId' => 2,
+            'name' => 'Pizza',
+            'price' => '50000',
+            'stock' => '50',
+            'photo' => 'Pizza.jpg'
+        ]);
+
+        \App\Models\Product::factory()->create([
+            'categoryId' => 2,
+            'name' => 'Hamburger',
+            'price' => '50000',
+            'stock' => '50',
+            'photo' => 'Hamburger.jpg'
+        ]);
+
+        \App\Models\Product::factory()->create([
+            'categoryId' => 2,
+            'name' => 'Fried Rice',
+            'price' => '50000',
+            'stock' => '50',
+            'photo' => 'Fried Rice.jpg'
+        ]);
     }
 }

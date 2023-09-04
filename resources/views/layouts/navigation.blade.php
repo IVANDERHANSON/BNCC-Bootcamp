@@ -23,9 +23,6 @@
                             {{ __('Add Product') }}
                         </x-nav-link>
                     @endif
-                    <x-nav-link :href="route('invoice')" :active="request()->routeIs('invoice')">
-                        {{ __('Invoice') }}
-                    </x-nav-link>
                 </div>
             </div>
 
@@ -33,6 +30,9 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                     <a href="/cart"><i data-feather="shopping-cart"></i></a>
+                </button>
+                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                    <a href="/invoice"><i data-feather="file-text"></i></a>
                 </button>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">

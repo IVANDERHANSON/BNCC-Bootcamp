@@ -24,11 +24,11 @@ class CartSeeder extends Seeder
 
         \App\Models\Cart::factory()->create([
             'userId' => 2,
-            'productId' => 2,
-            'category' => 'Book',
-            'productName' => 'Harry Potter 2',
-            'productPrice' => '100000',
-            'productPhoto' => 'Book2.jpg',
+            'productId' => 4,
+            'category' => 'Food',
+            'productName' => 'Pizza',
+            'productPrice' => '500000',
+            'productPhoto' => 'Pizza.jpg',
             'quantity' => 10
         ]);
 

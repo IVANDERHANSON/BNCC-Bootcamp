@@ -20,8 +20,8 @@
                             <br>
                             <select class="form-select" aria-label="Default select example" name="categoryId">
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @foreach ($categories as $category2)
+                                    <option value="{{$category2->id}}">{{$category2->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -62,6 +62,9 @@
                             <br>
                             <input type="file" class="form-control" id="exampleInputPassword1" name='photo' value="{{ $product->photo }}">
                         </div>
+                        
+                        <br>
+                        <img src="{{asset('/storage'.'/'.$category->name.'/'.$product->photo)}}" alt="{{ $product->photo }}" style="width: 200px; height: 200px;">
 
                         <div>
                             <br>

@@ -9,12 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <p>{{ $cart->productName }}</p>
-                    <img src="{{asset('/storage'.'/'.$cart->category.'/'.$cart->productPhoto)}}" alt="{{ $cart->productPhoto }}">
+                    <p style="font-weight: bold;">{{ $cart->productName }}</p>
+                    <img src="{{asset('/storage'.'/'.$cart->category.'/'.$cart->productPhoto)}}" alt="{{ $cart->productPhoto }}" style="width: 200px; height: 200px;">
                     <h2>Category: {{ $cart->category }}</h2>
                     <p>Price: Rp. {{ $cart->productPrice }}</p>
                     <p>Quantity: {{ $cart->quantity }}</p>
-                    <p>Total Price: {{ $cart->productPrice*$cart->quantity }}</p>
+                    <p>Total Price: Rp. {{ $cart->productPrice*$cart->quantity }}</p>
                     <br>
                     <form action="/buyProduct/{{ $cart->id }}" method="POST">
                         @csrf
