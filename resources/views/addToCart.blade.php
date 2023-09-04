@@ -22,7 +22,12 @@
                         @error('quantity')
                             <span class="text-error block" style="color: red;">{{ $message }}</span>
                         @enderror
-                        <input type="number" class="form-control" id="exampleInputPassword1" name='quantity' placeholder="" value="{{ old('quantity') }}">
+                        <input type="number" class="form-control" id="quantityInput" name='quantity' placeholder="" value="{{ old('quantity') }}">
+                        </div>
+
+                        <div>
+                            <br>
+                            <label for="exampleInputPassword1" class="form-label">Total Price: <span id="totalPrice"></span></label>
                         </div>
 
                         <div>
@@ -36,4 +41,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function updateTotalPrice() {
+            var quantityInput = document.getElementById('quantityInput');
+            var totalPriceElement = document.getElementById('totalPrice');
+            var productPrice = {{ $product->price }};
+            var quantity = parseInt(quantityInput.value) || 0;
+            var total = productPrice * quantity;
+            totalPriceElement.textContent = 'Rp. ' + total;
+        }
+        var quantityInput = document.getElementById('quantityInput');
+        quantityInput.addEventListener('input', updateTotalPrice);
+        updateTotalPrice();
+    </script>
 </x-app-layout>
