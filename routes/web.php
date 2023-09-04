@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/buyProductNow/{id}', [InvoiceController::class, 'create'])->name('buyProductNow');
     Route::get('/buy-product/{id}', [InvoiceController::class, 'index3'])->name('buy.product');
     Route::post('/buyProduct/{id}', [InvoiceController::class, 'create2'])->name('buyProduct');
+    Route::get('/report-product/{id}', [ReportController::class, 'index'])->name('report.product');
+    Route::post('/reportProduct/{id}', [ReportController::class, 'create'])->name('reportProduct');
 });
 
 Route::middleware('auth', 'admin')->group(function () {
@@ -55,6 +58,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('/edit-product/{id}', [ProductController::class, 'edit'])->name('edit.product');
     Route::patch('/update-product/{id}', [ProductController::class, 'update'])->name('update.product');
     Route::delete('/delete-product/{id}', [ProductController::class, 'delete'])->name('delete.product');
+    Route::get('/report', [ReportController::class, 'index2'])->name('report');
 });
 
 require __DIR__.'/auth.php';

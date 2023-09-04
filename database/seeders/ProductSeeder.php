@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
             'categoryId' => 1,
             'name' => 'Harry Potter 1',
             'price' => '100000',
-            'stock' => '200',
+            'stock' => '0',
             'photo' => 'Book1.jpg'
         ]);
 

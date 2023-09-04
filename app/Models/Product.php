@@ -24,4 +24,8 @@ class Product extends Model
     public function carts() {
         return $this->hasMany(Cart::class);
     }
+
+    public function reports() {
+        return $this->hasMany(Report::class);
+    }
 }
