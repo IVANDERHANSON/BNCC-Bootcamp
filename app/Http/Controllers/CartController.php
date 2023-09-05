@@ -99,7 +99,7 @@ class CartController extends Controller
         $category = Category::find($product->categoryId)->name;
         
         $request->validate([
-            'quantity' => ['required', 'integer', 'min:1', 'max:'.$product->stock]
+            'quantity' => ['required', 'integer', 'min:1', 'max:'.$product->stock+$cart->quantity]
         ]);
 
         Cart::find($id)->update([

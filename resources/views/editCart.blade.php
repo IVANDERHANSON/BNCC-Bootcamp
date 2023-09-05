@@ -13,7 +13,7 @@
                     <img src="{{asset('/storage'.'/'.$category.'/'.$product->photo)}}" alt="{{ $product->photo }}" style="width: 200px; height: 200px;">
                     <h2>Category: {{ $category }}</h2>
                     <p>Price: Rp. {{ $product->price }}</p>
-                    <p>Stock: {{ $product->stock }}</p>
+                    <p>Stock: {{ $product->stock+$cart->quantity }}</p>
                     <br>
                     <form action="/update-cart/{{ $cart->id }}" method="POST">
                         @csrf
